@@ -11,6 +11,7 @@ import {
   TooltipComponent,
   LegendComponent,
   GridComponent,
+  ToolboxComponent,
 } from 'echarts/components';
 import VChart, { THEME_KEY } from 'vue-echarts';
 import { ref, provide } from 'vue';
@@ -22,13 +23,25 @@ use([
   TooltipComponent,
   LegendComponent,
   GridComponent,
+  ToolboxComponent,
 ]);
 
 provide(THEME_KEY, 'roma');
 
+const refresh = (option) => {
+  option.value.series.push({
+    name: 'Lowest',
+    type: 'line',
+    data: [
+      [0, -1],
+      [1, -1],
+    ],
+  });
+};
+
 const option = ref({
   title: {
-    text: 'Temperature Change in the Coming Week',
+    text: 'Data',
   },
   tooltip: {
     trigger: 'axis',
