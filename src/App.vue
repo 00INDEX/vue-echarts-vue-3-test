@@ -49,7 +49,7 @@ const option_template = {
   legend: {
     textStyle: {
       //图例字体大小
-      fontSize: 5,
+      fontSize: 10,
     },
     //图例大小
     itemHeight: 2,
@@ -57,7 +57,7 @@ const option_template = {
     left: 30,
     right: 30,
     top: 30,
-    bottom: 30,
+    bottom: 100,
   },
   toolbox: {
     show: true,
