@@ -62,20 +62,14 @@ const option_template = {
     },
   },
   xAxis: [
+    {},
     {
-      type: 'value',
-    },
-    {
-      type: 'value',
       gridIndex: 1,
     },
   ],
   yAxis: [
+    {},
     {
-      type: 'value',
-    },
-    {
-      type: 'value',
       gridIndex: 1,
     },
   ],
@@ -110,6 +104,7 @@ onMounted(() => {
         model_options[model] = JSON.parse(JSON.stringify(option_template));
         model_options[model].series = res.data;
         model_options[model].title = model;
+        console.log('模型配置', model_options[model]);
       });
     });
   });
