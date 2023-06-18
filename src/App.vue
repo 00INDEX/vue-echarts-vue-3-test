@@ -48,7 +48,7 @@ const option_template = {
     //图例大小
     itemHeight: 2,
     //图例位置
-    bottom: 'bottom',
+    top: '150%',
   },
   toolbox: {
     show: true,
@@ -72,10 +72,10 @@ const option_template = {
   ],
   grid: [
     {
-      right: '60%',
+      right: '50%',
     },
     {
-      left: '60%',
+      left: '50%',
     },
   ],
   series: [
