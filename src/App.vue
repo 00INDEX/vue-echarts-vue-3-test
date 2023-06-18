@@ -107,7 +107,9 @@ onMounted(() => {
         model_options[model] = JSON.parse(JSON.stringify(option_template));
         model_options[model].series = res.data;
         model_options[model].title = {
+          subtext: 'tokens            epoch',
           text: model,
+          textAlign: 'center',
         };
         console.log('模型配置', model_options[model]);
       });
@@ -118,6 +120,7 @@ onMounted(() => {
 
 <style scoped>
 body {
+  padding-top: '40px';
   width: 100vw;
 }
 .chart {
