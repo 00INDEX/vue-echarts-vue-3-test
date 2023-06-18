@@ -2,9 +2,6 @@
   <div class="cell" v-for="(value, key) in model_options" :key="key">
     <v-chart class="chart" :option="value" autoresize></v-chart>
   </div>
-  <div class="cell" v-for="(value, key) in model_options" :key="key">
-    <v-chart class="chart" :option="value" autoresize></v-chart>
-  </div>
 </template>
 
 <script setup>
@@ -55,7 +52,7 @@ const option_template = {
     //图例大小
     itemHeight: 2,
     //图例位置
-    bottom: '-33vh',
+    bottom: '-30vh',
   },
   toolbox: {
     show: true,
