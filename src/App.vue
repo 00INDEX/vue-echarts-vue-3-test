@@ -103,7 +103,9 @@ onMounted(() => {
         console.log('请求模型数据', res);
         model_options[model] = JSON.parse(JSON.stringify(option_template));
         model_options[model].series = res.data;
-        model_options[model].title = model;
+        model_options[model].title = {
+          text: model,
+        };
         console.log('模型配置', model_options[model]);
       });
     });
