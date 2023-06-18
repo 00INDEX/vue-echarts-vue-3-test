@@ -48,7 +48,7 @@ const option_template = {
     //图例大小
     itemHeight: 2,
     //图例位置
-    top: '150%',
+    top: '100%',
   },
   toolbox: {
     show: true,
@@ -72,10 +72,10 @@ const option_template = {
   ],
   grid: [
     {
-      right: '50%',
+      right: '55%',
     },
     {
-      left: '50%',
+      left: '55%',
     },
   ],
   series: [
@@ -113,7 +113,7 @@ onMounted(() => {
 <style scoped>
 .chart {
   height: 90vh;
-  width: 100vw;
+  width: 140vw;
 }
 .cell {
   display: flex;
