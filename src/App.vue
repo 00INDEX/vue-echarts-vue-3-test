@@ -52,7 +52,7 @@ const option_template = {
     //图例大小
     itemHeight: 2,
     //图例位置
-    bottom: '-30vh',
+    bottom: '-27vh',
   },
   toolbox: {
     show: true,
@@ -67,9 +67,8 @@ const option_template = {
     left: 'center',
     top: '5%',
     style: {
-      text: 'tokens         epoch',
+      text: 'tokens      epoch',
       textAlign: 'center',
-      fill: '#333',
       fontSize: 10,
       fontWeight: 700,
     },
