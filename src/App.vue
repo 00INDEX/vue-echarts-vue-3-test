@@ -1,14 +1,12 @@
 <template>
   <div class="cell" v-for="(value, key) in model_options" :key="key">
-    {{ value }}
     <v-chart
       class="chart"
       v-for="(value, key) in value"
       :key="key"
       :option="value"
       autoresize
-      >{{ value }}</v-chart
-    >
+    ></v-chart>
   </div>
 </template>
 
@@ -100,7 +98,8 @@ onMounted(() => {
 
 <style scoped>
 .chart {
-  height: 100vh;
+  height: 50vh;
+  width: 40vw;
 }
 .cell {
   display: flex;
