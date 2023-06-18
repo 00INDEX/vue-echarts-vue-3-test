@@ -77,8 +77,10 @@ const option_template = {
 
 onMounted(() => {
   axios.get('/models').then((res) => {
+    console.dir(res);
     res.data.forEach((model) => {
       axios.get('/data/' + model).then((res) => {
+        console.dir(res);
         model_options[model] = new Map();
         for (let [key, value] of res.data) {
           model_options[model].set(
