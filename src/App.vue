@@ -1,12 +1,6 @@
 <template>
   <div class="cell" v-for="(value, key) in model_options" :key="key">
-    <v-chart
-      class="chart"
-      v-for="(value, key) in value"
-      :key="key"
-      :option="value"
-      autoresize
-    ></v-chart>
+    <v-chart class="chart" :option="value" autoresize></v-chart>
   </div>
 </template>
 
@@ -67,12 +61,32 @@ const option_template = {
       saveAsImage: {},
     },
   },
-  xAxis: {
-    type: 'value',
-  },
-  yAxis: {
-    type: 'value',
-  },
+  xAxis: [
+    {
+      type: 'value',
+    },
+    {
+      type: 'value',
+      gridIndex: 1,
+    },
+  ],
+  yAxis: [
+    {
+      type: 'value',
+    },
+    {
+      type: 'value',
+      gridIndex: 1,
+    },
+  ],
+  grid: [
+    {
+      bottom: '60%',
+    },
+    {
+      top: '60%',
+    },
+  ],
   series: [
     {
       name: 'Highest',
@@ -93,17 +107,9 @@ onMounted(() => {
     res.data.forEach((model) => {
       axios.get('/data/' + model).then((res) => {
         console.log('请求模型数据', res);
-        model_options[model] = {};
-        for (const key in res.data) {
-          model_options[model][key] = JSON.parse(
-            JSON.stringify(option_template)
-          );
-          model_options[model][key].series = res.data[key];
-          model_options[model][key].title = {
-            text: key,
-          };
-          console.log('构造报表配置', model_options[model]);
-        }
+        model_options[model] = JSON.parse(JSON.stringify(option_template));
+        model_options[model].series = res.data;
+        model_options[model].title = model;
       });
     });
   });
@@ -113,7 +119,7 @@ onMounted(() => {
 <style scoped>
 .chart {
   height: 90vh;
-  width: 50vw;
+  width: 100vw;
 }
 .cell {
   display: flex;
