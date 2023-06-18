@@ -1,8 +1,17 @@
 <template>
-  <v-chart class="chart" :option="option" autoresize />
+  <div class="cell" v-for="(value, key) in model_options" :key="key">
+    <v-chart
+      class="chart"
+      v-for="(value, key) in value"
+      :key="key"
+      :option="value"
+      autoresize
+    />
+  </div>
 </template>
 
 <script setup>
+import axios from 'axios';
 import { use } from 'echarts/core';
 import { CanvasRenderer } from 'echarts/renderers';
 import { LineChart } from 'echarts/charts';
@@ -14,7 +23,7 @@ import {
   ToolboxComponent,
 } from 'echarts/components';
 import VChart, { THEME_KEY } from 'vue-echarts';
-import { ref, provide } from 'vue';
+import { ref, provide, reactive, onMounted } from 'vue';
 
 use([
   CanvasRenderer,
@@ -28,19 +37,9 @@ use([
 
 provide(THEME_KEY, 'roma');
 
-const refresh = (option) => {
-  option.value.series.push({
-    name: 'Lowest',
-    type: 'line',
-    data: [
-      [0, -1],
-      [1, -1],
-      [2, 3.5]
-    ],
-  });
-};
+let model_options = reactive({});
 
-const option = ref({
+const option_template = {
   title: {
     text: 'Data',
   },
@@ -53,7 +52,6 @@ const option = ref({
     feature: {
       dataZoom: {},
       dataView: { readOnly: false },
-      restore: {},
       saveAsImage: {},
     },
   },
@@ -71,25 +69,39 @@ const option = ref({
         [0, 0],
         [1, 1],
         [2, 3.5],
-        [2,5]
-      ],
-    },
-    {
-      name: 'Lowest',
-      type: 'line',
-      data: [
-        [0,2],
-        [1, 2],
-        [2, 3.5],
-        [6,5.5]
+        [2, 5],
       ],
     },
   ],
+};
+
+onMounted(() => {
+  axios.get('/models').then((res) => {
+    res.data.forEach((model) => {
+      axios.get('/data' + model).then((res) => {
+        model_options[model] = new Map();
+        for (let [key, value] of res.data) {
+          model_options[model].set(
+            key,
+            JSON.parse(JSON.stringify(option_template))
+          );
+          model_options[model].get(key).series = value;
+          model_options[model].get(key).tittle = key;
+        }
+      });
+    });
+  });
 });
 </script>
 
 <style scoped>
 .chart {
   height: 100vh;
+}
+.cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 </style>
