@@ -83,14 +83,13 @@ onMounted(() => {
     res.data.forEach((model) => {
       axios.get('/data/' + model).then((res) => {
         console.log('请求模型数据', res);
-        model_options[model] = new Map();
+        model_options[model] = {};
         for (const key in res.data) {
-          model_options[model].set(
-            key,
-            JSON.parse(JSON.stringify(option_template))
+          model_options[model][key] = JSON.parse(
+            JSON.stringify(option_template)
           );
-          model_options[model].get(key).series = res.data[key];
-          model_options[model].get(key).tittle = key;
+          model_options[model][key].series = res.data[key];
+          model_options[model][key].tittle = key;
           console.log('构造报表配置', model_options[model]);
         }
       });
