@@ -82,12 +82,12 @@ onMounted(() => {
       axios.get('/data/' + model).then((res) => {
         console.dir(res);
         model_options[model] = new Map();
-        for (let [key, value] of res.data) {
+        for (const key in res.data) {
           model_options[model].set(
             key,
             JSON.parse(JSON.stringify(option_template))
           );
-          model_options[model].get(key).series = value;
+          model_options[model].get(key).series = res.data[key];
           model_options[model].get(key).tittle = key;
         }
       });
