@@ -92,11 +92,11 @@ const option_template = {
   grid: [
     {
       right: '55%',
-      bottom: '25vh',
+      bottom: '25%',
     },
     {
       left: '55%',
-      bottom: '25vh',
+      bottom: '25%',
     },
   ],
   series: [
