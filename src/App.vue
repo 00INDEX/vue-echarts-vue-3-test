@@ -46,7 +46,10 @@ const option_template = {
   tooltip: {
     trigger: 'axis',
   },
-  legend: {},
+  legend: {
+    type: 'scroll',
+    orient: 'horizontal',
+  },
   toolbox: {
     show: true,
     feature: {
@@ -100,7 +103,7 @@ onMounted(() => {
 
 <style scoped>
 .chart {
-  height: 100vh;
+  height: 90vh;
   width: 50vw;
 }
 .cell {
