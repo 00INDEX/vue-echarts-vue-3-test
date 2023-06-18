@@ -1,12 +1,14 @@
 <template>
   <div class="cell" v-for="(value, key) in model_options" :key="key">
+    value
     <v-chart
       class="chart"
       v-for="(value, key) in value"
       :key="key"
       :option="value"
       autoresize
-    />
+      >value</v-chart
+    >
   </div>
 </template>
 
@@ -77,10 +79,10 @@ const option_template = {
 
 onMounted(() => {
   axios.get('/models').then((res) => {
-    console.dir(res);
+    console.dir('请求模型种类', res);
     res.data.forEach((model) => {
       axios.get('/data/' + model).then((res) => {
-        console.dir(res);
+        console.dir('请求模型数据', res);
         model_options[model] = new Map();
         for (const key in res.data) {
           model_options[model].set(
@@ -89,6 +91,7 @@ onMounted(() => {
           );
           model_options[model].get(key).series = res.data[key];
           model_options[model].get(key).tittle = key;
+          console.dir('构造报表配置', model_options[model]);
         }
       });
     });
