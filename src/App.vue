@@ -55,7 +55,7 @@ const option_template = {
     //图例大小
     itemHeight: 2,
     //图例位置
-    bottom: '-20vh',
+    bottom: '-33vh',
   },
   toolbox: {
     show: true,
@@ -92,11 +92,11 @@ const option_template = {
   grid: [
     {
       right: '55%',
-      bottom: '25%',
+      bottom: '30%',
     },
     {
       left: '55%',
-      bottom: '25%',
+      bottom: '30%',
     },
   ],
   series: [
@@ -136,7 +136,7 @@ body {
   width: 100vw;
 }
 .chart {
-  height: 100vh;
+  height: 110vh;
   width: 100vw;
   overflow: visible;
 }
