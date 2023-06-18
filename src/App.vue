@@ -47,8 +47,17 @@ const option_template = {
     trigger: 'axis',
   },
   legend: {
-    type: 'scroll',
-    orient: 'horizontal',
+    textStyle: {
+      //图例字体大小
+      fontSize: 10,
+    },
+    //图例大小
+    itemHeight: 5,
+    //图例位置
+    left: 30,
+    right: 0,
+    top: 30,
+    bottom: 30,
   },
   toolbox: {
     show: true,
