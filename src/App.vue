@@ -48,7 +48,7 @@ const option_template = {
     //图例大小
     itemHeight: 2,
     //图例位置
-    top: '100%',
+    bottom: '-20%',
   },
   toolbox: {
     show: true,
@@ -113,7 +113,7 @@ onMounted(() => {
 <style scoped>
 .chart {
   height: 90vh;
-  width: 140vw;
+  width: 100vw;
 }
 .cell {
   display: flex;
