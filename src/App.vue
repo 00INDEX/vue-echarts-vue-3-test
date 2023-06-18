@@ -87,7 +87,7 @@ onMounted(() => {
             JSON.stringify(option_template)
           );
           model_options[model][key].series = res.data[key];
-          model_options[model][key].tittle = key;
+          model_options[model][key].title = key;
           console.log('构造报表配置', model_options[model]);
         }
       });
@@ -98,12 +98,12 @@ onMounted(() => {
 
 <style scoped>
 .chart {
-  height: 50vh;
-  width: 40vw;
+  height: 100vh;
+  width: 50vw;
 }
 .cell {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
 }
