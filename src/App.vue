@@ -121,7 +121,7 @@ body {
   width: 100vw;
 }
 .chart {
-  height: 80vh;
+  height: 90vh;
   width: 100vw;
   overflow: visible;
 }
