@@ -87,7 +87,9 @@ onMounted(() => {
             JSON.stringify(option_template)
           );
           model_options[model][key].series = res.data[key];
-          model_options[model][key].title = key;
+          model_options[model][key].title = {
+            text: key,
+          };
           console.log('构造报表配置', model_options[model]);
         }
       });
