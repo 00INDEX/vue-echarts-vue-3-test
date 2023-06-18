@@ -38,7 +38,7 @@ const option_template = {
     text: 'Data',
   },
   tooltip: {
-    trigger: 'axis',
+    trigger: 'item',
   },
   legend: {
     textStyle: {
@@ -114,11 +114,13 @@ onMounted(() => {
 .chart {
   height: 90vh;
   width: 100vw;
+  overflow: visible;
 }
 .cell {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  overflow: visible;
 }
 </style>
