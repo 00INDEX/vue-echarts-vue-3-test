@@ -38,7 +38,11 @@ const option_template = {
     text: 'Data',
   },
   tooltip: {
-    trigger: 'item',
+    trigger: 'axis',
+    textStyle: {
+      fontSize: 10,
+    },
+    itemHeight: 2,
   },
   legend: {
     textStyle: {
@@ -48,7 +52,7 @@ const option_template = {
     //图例大小
     itemHeight: 2,
     //图例位置
-    bottom: '-30%',
+    bottom: '-10%',
   },
   toolbox: {
     show: true,
