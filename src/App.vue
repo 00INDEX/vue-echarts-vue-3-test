@@ -57,7 +57,7 @@ const option_template = {
     left: 30,
     right: 30,
     top: 30,
-    bottom: 100,
+    bottom: 500,
   },
   toolbox: {
     show: true,
