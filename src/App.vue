@@ -62,6 +62,18 @@ const option_template = {
       saveAsImage: {},
     },
   },
+  graphic: {
+    type: 'text',
+    left: 'center',
+    top: '5%',
+    style: {
+      text: 'tokens         epoch',
+      textAlign: 'center',
+      fill: '#333',
+      fontSize: 10,
+      fontWeight: 700,
+    },
+  },
   xAxis: [
     {},
     {
@@ -77,11 +89,11 @@ const option_template = {
   grid: [
     {
       right: '55%',
-      bottom: '20%',
+      bottom: '25%',
     },
     {
       left: '55%',
-      bottom: '20%',
+      bottom: '25%',
     },
   ],
   series: [
@@ -107,9 +119,7 @@ onMounted(() => {
         model_options[model] = JSON.parse(JSON.stringify(option_template));
         model_options[model].series = res.data;
         model_options[model].title = {
-          subtext: 'tokens            epoch',
           text: model,
-          textAlign: 'center',
         };
         console.log('模型配置', model_options[model]);
       });
@@ -120,11 +130,11 @@ onMounted(() => {
 
 <style scoped>
 body {
-  padding-top: '40px';
+  padding-top: 40px;
   width: 100vw;
 }
 .chart {
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
   overflow: visible;
 }
