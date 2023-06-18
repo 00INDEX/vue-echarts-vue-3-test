@@ -49,13 +49,13 @@ const option_template = {
   legend: {
     textStyle: {
       //图例字体大小
-      fontSize: 10,
+      fontSize: 5,
     },
     //图例大小
-    itemHeight: 5,
+    itemHeight: 2,
     //图例位置
     left: 30,
-    right: 0,
+    right: 30,
     top: 30,
     bottom: 30,
   },
