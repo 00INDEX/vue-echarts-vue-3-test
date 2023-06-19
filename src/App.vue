@@ -38,7 +38,7 @@ const option_template = {
     text: 'Data',
   },
   tooltip: {
-    trigger: 'axis',
+    trigger: 'item',
     textStyle: {
       fontSize: 10,
     },
@@ -73,8 +73,23 @@ const option_template = {
     },
   },
   xAxis: [
-    {},
     {
+      axisPointer: {
+        show: true,
+        type: 'line',
+        label: {
+          show: false,
+        },
+      },
+    },
+    {
+      axisPointer: {
+        show: true,
+        type: 'line',
+        label: {
+          show: false,
+        },
+      },
       gridIndex: 1,
     },
   ],
@@ -87,11 +102,11 @@ const option_template = {
   grid: [
     {
       right: '55%',
-      bottom: '20%',
+      bottom: '15%',
     },
     {
       left: '55%',
-      bottom: '20%',
+      bottom: '15%',
     },
   ],
   series: [
