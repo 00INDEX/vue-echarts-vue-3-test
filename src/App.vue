@@ -87,11 +87,11 @@ const option_template = {
   grid: [
     {
       right: '55%',
-      bottom: '30%',
+      bottom: '20%',
     },
     {
       left: '55%',
-      bottom: '30%',
+      bottom: '20%',
     },
   ],
   series: [
@@ -131,7 +131,7 @@ body {
   width: 100vw;
 }
 .chart {
-  height: 110vh;
+  height: 100vh;
   width: 100vw;
   overflow: visible;
 }
