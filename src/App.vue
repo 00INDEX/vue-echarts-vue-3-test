@@ -52,7 +52,7 @@ const option_template = {
     //图例大小
     itemHeight: 2,
     //图例位置
-    bottom: '-10vh',
+    bottom: 'bottom',
   },
   toolbox: {
     show: true,
